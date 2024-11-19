@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Update Profile</h2>
+        <form action="/profile" method="POST">
+            <input type="email" name="email" value="{{ user.email }}" required><br>
+            <input type="text" name="profile_pic" placeholder="Profile Pic URL" value="{{ user.profile_pic }}"><br>
+            <button type="submit">Update</button>
+        </form>
+        <a href="{{ url_for('dashboard') }}">Go Back to Dashboard</a>
+    </div>
+</body>
+</html>
